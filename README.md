@@ -2,15 +2,12 @@
 
 Hi everyone and welcome. In this tutorial you are going to create a Machine Learning model that can identify object that you hold in front of a camera.
 
-### 1. Setting up Azure
+## 1. Setting up Azure
+
+### Getting an Azure Subscription
 To run this tutorial you need to have an Azure Subscription. If you are a minor you should ask one of your parent to help you with signing up. If you are above 13 year you might be able to use the [Microsoft Azure for Students Starter Offer](https://azure.microsoft.com/en-us/offers/ms-azr-0144p/)
 
 To sign up for Azure Subscription [Click here](https://azure.microsoft.com/en-us/free/)
-
-
-# Lab 2: Microsoft Azure Cognitive Services - Custom Vision
-
-Using Microsoft Azure Custom Vision service you can start to build your own personalised image classification and object detection algorithms with very little code. In this exercise we will create a Lego Simpsons classification algorithm. 
 
 ### Create Resource Group
 
@@ -44,7 +41,7 @@ Now create a Custom Vision instance in your Azure account.
 
 ### Build Classifier
 
-Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=gaic-github-heboelma) and choose sign in. Sign in with your Azure credentials account.
+Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=aiml-0000-heboelma) and choose sign in. Sign in with your Azure credentials account.
 
 > Accept the terms and conditions box to continue.
 
