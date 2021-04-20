@@ -40,95 +40,104 @@ Now you create a Custom Vision instance in your Azure account.
   * Click Create
 
 
-### Build Classifier
+## 2. Build a fruit classifier
 
 Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=aiml-25242-heboelma) and choose sign in. Sign in with your Azure credentials account.
 
 > Accept the terms and conditions box to continue.
 
-#### Create Project
+### Create Project
 
 Once loaded choose 'New Project' which opens a window to enter details:
 
-* Name: choose a suitable name
+* Name: Fruit Project
 * Description: add a description of the classifier (example shown in image below)
-* Resource Group: choose the resource group you created your custom vision service in (example: workshop[SO])
+* Resource Group: choose the resource group you created for your custom vision service in in the previous step.
 * Project Types: Classification
 * Classification Types: Multiclass (Single tag per image)
-* Domains: Retail (compact)
+* Domains: Food (compact)
 * Export Capabilities: Basic platforms
 
-![Create Custom Vision Project](docsimages/createClassifier.png)
+![Create Custom Vision Project](images/createClassifier.png)
 
 Click on 'Create Project' and you will land on an empty workspace.
 
-#### Add Images
+### Add training images
 
 Now you can start adding images and assigning them tags to create our image classifier.
 
-* Download and unzip the [Simpsons Lego Dataset](https://github.com/hnky/dataset-lego-figures/raw/master/_download/simpsons-lego-dataset.zip)
+* Download and unzip the [Fruit dataset](https://github.com/aiadvocates/Fruit-Dataset/raw/main/fruit.zip)
 
-* In the top left, select 'Add images', browse for the first folder of images - Bart Simpson - and select all the images in the folder.
+* In the top left, select *'Add images'*, browse for the first folder of images - apple - and select all the images in the folder.
 
-* Add the tag 'Bart Simpson' to the Bart Simpson images and select 'Upload files'
+* Add the tag 'Apple' to the apple images and select 'Upload files'
 
 Once successful, you receive a confirmation message and you should see that your images are now available in the workspace.
 
-![Upload images of drills](docsimages/addSimpsons.png)
+![Upload images of apples](images/upload.png)
 
-Now complete the same steps of uploading and tagging images for the other Simpsons in the folder. For each type of Simpson:
+Now complete the same steps of uploading and tagging images for the other fruit in the folder. For each type of fruit:
 
 * Click 'Add images'
 * Select all the images
-* Add the class label (Lisa, Marge, etc.)
+* Add the class label (banana, Orange, etc.)
 * Choose upload
 * Confirm images uploaded into the workspace
 
-Now you should have all categories uploaded and on the left hand side you can see your Simpsons classes and you can filter depending on type of Simpson image.
+Now you should have all categories uploaded and on the left hand side you can see your fruit classes and you can filter depending on type of fruit.
 
-#### Train Model
+![Upload images of apples](images/uploadDone.png)
 
-Now you are ready to train your algorithm on the Simpsons image data you have uploaded. Select the green **'Train'** button in the top right corner. For this demo, you can use the "Fast Training" option.
 
-Once the training process is complete it will take you to the Performance tab. Here you will receive machine learning evaluation metrics for your model. Here you algo get information regarding the class imbalance, as some Simpsons have less images than others.
+### Train Model
 
-![Evaluation Medtrics](docsimages/trainMetrics.png)
+Now you are ready to train your model on the fruit image data you have uploaded. Select the green **'Train'** button in the top right corner. For this demo, you can use the "Fast Training" option. This will take a few minutes.
 
-#### Test Model
+Once the training process is complete it will take you to the Performance tab. Here you will receive machine learning evaluation metrics for your model. 
+
+![Evaluation Medtrics](images/trainMetrics.png)
+
+
+### Test Model
 
 Now you have a model, you need to test the model. Choose the 'Quick Test' button in the top right *(next to the train button)* this will open a window where you can browse for a local image or enter a web URL.
 
 Use one of the image links below (images the model have not been trained on) and paste the link in the Image URL field. The image will be analysed and a result returned of what Simpson the model thinks it is (prediction tag) and the models confidence of its result (prediction probability).
 ```
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Bart.jpg
+https://github.com/aiadvocates/Fruit-Dataset/raw/main/test/apple.jpg
 ```
 
-![Quick Test](docsimages/QuickTest.png)
+![Quick Test](images/quickTest.png)
 
 > Repeat this process for other image in the test folder, or search online for other images to see how the model performs.
 
 ```
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Krusty.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Bart.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Flanders.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Homer.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Lisa.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/marge.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Milhouse.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/MrBurns.jpg
-https://raw.githubusercontent.com/hnky/dataset-lego-figures/master/_test/Wiggum.jpg
+https://github.com/aiadvocates/Fruit-Dataset/raw/main/test/apple.jpg
+https://github.com/aiadvocates/Fruit-Dataset/raw/main/test/banana.jpg
+https://github.com/aiadvocates/Fruit-Dataset/raw/main/test/orange.jpg
+https://github.com/aiadvocates/Fruit-Dataset/raw/main/test/pineapple.jpg
 ```
 
-#### Publish Model
+Now you have trainend a model that can see the difference between 4 fruits. Feel free to take out your camera and add an other fruit, or maybe create a completely different model.
 
-To use this model within applications you need the prediction details. Therefore, you have to go to the Performance tab from the top bar, click the **Publish** button.
 
-![Prediction model](docsimages/publishModel.png)
+## 3. Use your model in the real world
+In this last part we are going to take the model you have created in step 2 and use it in an application that uses your camera and the model. 
 
-Please provide a name for your model and select the Prediction resource, and click on Publish. Please take notice of you Publication Resource, which you need in the second task.
+> The goal is to hold an apple in front of your webcam and the application will tell you if it is a apple or not.
 
-![Prediction model resource](docsimages/publishModel2.png)
 
-You can now select the **Prediction URL** button to gain all information you need to create a Postman call to your API.
+### Download the model
+In this step we are going to export the model as a TensorFlow.js model. 
 
-![Prediction model URL](docsimages/predictionURL.png)
+- Click on Performance in the top menu
+- Click on Export
+- Click on TensorFlow
+- In the dropdownbox select TensorFlow.js
+- Click Export (Wait a few seconds for the model to be ready for export)
+- Click Download
+
+![Export model](images/export.png)
+
+### TBA
+<INSERT APP>
