@@ -139,5 +139,10 @@ In this step we are going to export the model as a TensorFlow.js model.
 
 ![Export model](images/export.png)
 
-## 4. Use your model in the real world
-<INSERT APP>
+> Now you should have received a .zip file with a long name.
+
+### Setup the WebApp
+In this step we are going to run a simple webapp and upload the downloaded model to it.
+
+#### Click deploy
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
