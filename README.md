@@ -139,5 +139,5 @@ In this step we are going to export the model as a TensorFlow.js model.
 
 ![Export model](images/export.png)
 
-### TBA
+## 4. Use your model in the real world
 <INSERT APP>
