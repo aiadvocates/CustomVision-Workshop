@@ -144,5 +144,42 @@ In this step we are going to export the model as a TensorFlow.js model.
 ### Setup the WebApp
 In this step we are going to run a simple webapp and upload the downloaded model to it.
 
-#### Click deploy
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/)
+Click the button below to start the deployment of a webapplication in your Azure Subscription. Don't worry, the webapp is using the free tier of Azure WebApps.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faiadvocates%2FCustomVision-Workshop%2Fmain%2Fdeployment%2Ftemplate.json)
+
+After clicking the button and you are successfully logged in in Azure, you should see the screen below.
+
+![Deploy ARM Template](images/deploy_arm.png)
+
+- Fill in the missing fields:
+**Resource group:** Select the previously created Resource group or create a new one.   
+**Region:** If you create a new resource group you can select the region closest to you.   
+**Web App Name:** Enter a name (like: club15-maya), no spaces allowed.   
+
+- Click "Review + Create"
+- Click "Create"
+
+Now you can take a 5 minute break. When the deployment is complete you see the message: "Your deployment is complete".
+
+- Click the button: "Go to resource group"
+- In this resource group you see 2 item types. A App Service plan and an App Service.
+- Click on the App Service Item. This item should have the same name as you entered in the steps before. (Like: club15-maya)
+
+You should now see a screen like the image below.
+
+![WebApp Details](images/webapp.png)
+
+Your webapplication is now up and running and you can now upload your model and test it!
+
+- Click on the link under URL. (Like: https://club15-maya.azurewebsites.net)
+- A webpage should open (this can take a while the first time)
+- Click de browse button and select the zip file you have downloaded in the previous step.
+- Click "upload"
+- When the upload is complete the browsers asks to access your camera. Click "Allow"
+- On screen you should now see your camera.
+- Go to the kitchen and pick an apple or banana and hold it in front of the camera.
+
+If everything works accoring plan, your application can now tells that it sees an apple.
+
+![WebApp Details](images/camera-app.png)
