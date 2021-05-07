@@ -4,8 +4,8 @@ Hi everyone and welcome!
 In this tutorial you are going to create a Machine Learning model that can identify an object that you hold in front of a camera.
 
 # Background Concept 
-Before we get started, let's learn a about "why" you would do this in the first place.
-The short answer is, using machine learning teaches the camera to "see."  It doesn’t really see but the model inside of it makes it intelligent and can detect objects it is looking for.
+Before we get started, let's learn about "why" you would do this in the first place.
+The short answer is, using machine learning teaches the camera to "see." It doesn’t really see but the model inside of it makes it intelligent and can detect objects it is looking for.
 
 # Let’s walk through an example that you will learn how to build in this lab using fruit.
 The camera is pointing at some fruit.  
@@ -33,7 +33,7 @@ Just takes some practice and in no time, you are on your way!
 # How do Camera Traps work?
 They work the same way!  
 The scientist trains the machine learning model to identify something, like a Snow Leopard.   
-Then that model is put on the smart camera and runs on it.  Every picture the camera takes through its lens is sent to the model is looked at just waiting to see if a picture  is a snow leopard.  
+Then that model is put on the smart camera and runs on it. Every picture the camera takes through its lens is sent to the model and is looked at just waiting to see if a picture is a snow leopard.  
 
 It would go something like this, if you can imagine a camera could talk:
 
