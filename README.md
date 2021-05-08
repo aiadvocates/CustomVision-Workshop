@@ -70,7 +70,7 @@ First create a Resource Group.
   * Select the location
   * Click Create
 
-![Resource Group Details](docsimages/createResourceGroup.png)  
+![Resource Group Details](images/create-resource-group.png)  
 
 ### Create Custom Vision instance
 
